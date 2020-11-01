@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -14,6 +19,8 @@
 }
 
 .App-header {
+  max-width: 100%;
+  height: auto;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -35,4 +42,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button {
+  padding: 10px 15px;
+  background-color: #549c83;
+  border-radius: 20px;
+  text-align: center;
+  border: 2px transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  border: 2px solid #549c83;
+  background-color: transparent;
+  transition: 0.2s all;
+  cursor: pointer;
+}
+
+.padding {
+  padding: 25px;
 }
