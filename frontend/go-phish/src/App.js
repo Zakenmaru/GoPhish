@@ -1,5 +1,6 @@
 import title_logo from './title_logo.svg';
 import React, { useState } from "react";
+import Play from "./components/Play/Play";
 import './App.css';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         </title>
         <img src={title_logo} />
         <div className="padding"></div>
-        <div className="button">
+        <div className="button" onClick={() => setState(4)}>
           Play
         </div>
         <div className="padding"></div>
@@ -37,8 +38,8 @@ function App() {
     if (state === 2) {
       return (
       <div>
-        <header class="App-header">
-          <img src={title_logo} alt="title" class="responsive" />
+        <header className="App-header">
+          <img src={title_logo} alt="title" className="responsive" />
           <h1>Instructions</h1>
           <p>
             Welcome to Go Phish, a point-and-click game
@@ -57,7 +58,7 @@ function App() {
     if (state === 3) {
       return (
         <div>
-          <header class="App-header">
+          <header className="App-header">
             <h1>Options</h1>
             <div className="button" onClick={() => setState(1)}>
               Go back
@@ -69,7 +70,19 @@ function App() {
     }
     /* Game State */
     if (state === 4) {
+      return (<div>
+        <header className="App-header">
+          <h1>Play</h1>
 
+          {/* Drag and drop board in the middle */}
+          <Play />
+
+          <div className="button" onClick={() => setState(1)}>
+            Go back
+          </div>
+
+        </header>
+      </div>);
     }
   }
   return (states());
